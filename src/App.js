@@ -1,5 +1,5 @@
 import "./App.css";
-// import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import facultyService from "./services/faculty.service";
@@ -42,13 +42,26 @@ function App() {
             <tr>
               <th scope="row">{fac.id}</th>
               <td>
-                <img src={fac.profile_Pic_URL} height="70" width="70" />
+                <img
+                  src={fac.profile_Pic_URL}
+                  height="70"
+                  width="70"
+                  alt="profile"
+                />
               </td>
               <td>{fac.faculty_Full_Name}</td>
               <td>{fac.current_designation}</td>
               <td>{fac.date_of_Joining_RIT}</td>
               <td>{fac.email_Address}</td>
-              <td><button className="btn-primary" onClick={}>Update</button></td>
+              <td>
+                <Link
+                  className="btn btn-primary"
+                  to={`/facupdate/${fac.id}`}
+                >
+                  Update
+                </Link>
+                {/* <button className="btn-primary"></button> */}
+              </td>
             </tr>
           ))}
         </tbody>

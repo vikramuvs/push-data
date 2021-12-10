@@ -4,7 +4,11 @@ const getAll = () => {
   return httpClient.get("/fd_responses/");
 };
 
-export default { getAll };
+const getById = (id) => {
+  return httpClient.get(`/fd_responses/${id}`);
+};
+
+export default { getAll, getById };
 
 // axios
 //     .get("/user", {
