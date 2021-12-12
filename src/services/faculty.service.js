@@ -8,7 +8,11 @@ const getById = (id) => {
   return httpClient.get(`/fd_responses/${id}`);
 };
 
-export default { getAll, getById };
+const postDetails = (data) => {
+  return httpClient.post("/fd_responses/", data);
+};
+
+export default { getAll, getById, postDetails };
 
 // axios
 //     .get("/user", {
