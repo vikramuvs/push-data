@@ -302,17 +302,17 @@ function AddFaculty() {
     };
 
     // console.log(facDetails);
-    window.alert("Data successfully added!");
 
-    document.getElementById("fac_form").reset();
-    // facultyService
-    //   .postDetails(facDetails)
-    //   .then((response) => {
-    //     // setFacultyDetails(response.data);
-    //     // set_areas_of_Interest_1(response.data.areas_of_Interest_1);
-    //     console.log(response);
-    //   })
-    //   .catch((error) => console.log(error));
+    facultyService
+      .postDetails(facDetails)
+      .then((response) => {
+        // setFacultyDetails(response.data);
+        // set_areas_of_Interest_1(response.data.areas_of_Interest_1);
+        document.getElementById("fac_form").reset();
+        window.alert("Data successfully added!");
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
