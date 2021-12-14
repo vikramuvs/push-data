@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router";
+import { useRef } from "react";
 import facultyService from "../services/faculty.service";
 
 function AddFaculty() {
@@ -312,7 +311,10 @@ function AddFaculty() {
         window.alert("Data successfully added!");
         console.log(response);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        window.alert("cant push data right now");
+        console.log(error);
+      });
   };
 
   return (
@@ -827,14 +829,14 @@ function AddFaculty() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="desig4duration">Duration of Designation 4</label>
+          <label htmlFor="desig4">Designation 4</label>
           <input
             type="text"
             className="form-control"
-            id="desig4duration"
-            aria-describedby="desig4duration"
-            placeholder="Duration of Designation 4"
-            ref={desig4duraref}
+            id="desig4"
+            aria-describedby="desig4"
+            placeholder="Designation 4"
+            ref={desig4ref}
           />
         </div>
 

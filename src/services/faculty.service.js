@@ -12,7 +12,15 @@ const postDetails = (data) => {
   return httpClient.post("/fd_responses/", data);
 };
 
-export default { getAll, getById, postDetails };
+const updateDetails = (id, data) => {
+  return httpClient.put(`/fd_responses/${id}`, data);
+};
+
+const deleteById = (id) => {
+  return httpClient.delete(`/fd_responses/${id}`);
+};
+
+export default { getAll, getById, postDetails, updateDetails, deleteById };
 
 // axios
 //     .get("/user", {
